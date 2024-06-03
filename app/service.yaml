@@ -1,0 +1,25 @@
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: terraform-simulation-app-service
+# spec:
+#   selector:
+#     app: terraform-simulation-app
+#   ports:
+#   - port: 3001
+#     protocol: TCP
+#     targetPort: 3001
+
+apiVersion: v1
+kind: Service
+metadata:
+ name: nginx-service
+ namespace: default
+spec:
+ selector:
+   app: nginx
+ ports:
+   - protocol: TCP
+     port: 80
+     targetPort: 80
+ type: LoadBalancer
